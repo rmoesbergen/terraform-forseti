@@ -31,6 +31,9 @@ permissions will be configured on the host project for the forseti service accou
 * `server_type` (string, "n1-standard-8"): Type of compute instance that Forseti server will use
 * `server_region` (string, "us-central1"): Region where the Forseti server will be installed
 
+For a full list of variables, see:
+[Variables](https://github.com/forseti-security/terraform-google-forseti/blob/master/variables.tf)
+
 ## Formatting, tflint and Checkov
 The module has been formatted using 'terraform fmt', and passed through 'tflint' and 'checkov'.
 Checkov was run using the following command:
@@ -42,9 +45,8 @@ checkov -d . --skip-path venv --download-external-modules terraform-google-modul
 The failed checks are all prevent in the third party Forseti module, so they can't be fixed.
 Here's the full checkov output, for reference:
 
-```commandline
-
-       _               _              
+```
+     _               _              
    ___| |__   ___  ___| | _______   __
   / __| '_ \ / _ \/ __| |/ / _ \ \ / /
  | (__| | | |  __/ (__|   < (_) \ V / 
