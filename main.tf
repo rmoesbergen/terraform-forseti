@@ -15,7 +15,8 @@ resource "google_service_account" "sa" {
 
 //noinspection MissingModule
 module "forseti" {
-  source = "terraform-google-modules/forseti/google"
+  source  = "terraform-google-modules/forseti/google"
+  version = "v5.0.3"
 
   domain     = data.google_organization.default.domain
   project_id = var.project_id
@@ -24,4 +25,8 @@ module "forseti" {
   config_validator_enabled = var.config_validator_enabled
   gsuite_admin_email       = var.gsuite_admin_email
   forseti_version          = var.forseti_version
+  folder_id                = var.folder_id
+  server_type              = var.server_type
+  server_region            = var.server_region
+  cloudsql_region          = var.cloudsql_region
 }
